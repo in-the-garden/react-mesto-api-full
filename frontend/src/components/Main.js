@@ -1,5 +1,4 @@
 import React from 'react';
-import { api } from '../utils/api';
 import { Card } from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
@@ -10,10 +9,22 @@ export function Main(props) {
         <main className="content"> 
             <section className="profile">
                 <div className="profile__personal-info">
-                    <button type="button" className="profile__edit-avatar-button" onClick={props.onEditAvatar}><img className="profile__avatar" src={currentUser.avatar} alt="Аватар"/></button>
+                    <button 
+                        type="button" 
+                        className="profile__edit-avatar-button" 
+                        onClick={props.onEditAvatar}>
+                            <img 
+                                className="profile__avatar" 
+                                src={currentUser.avatar} 
+                                alt="Аватар"/>
+                    </button>
                     <div className="profile__info">
                         <h1 className="profile__title">{currentUser.name}</h1>
-                        <button type="button" className="profile__edit-button" onClick={props.onEditProfile}></button>
+                        <button 
+                            type="button" 
+                            className="profile__edit-button" 
+                            onClick={props.onEditProfile}>
+                        </button>
                         <p className="profile__subtitle">{currentUser.about}</p>
                     </div>
                 </div>

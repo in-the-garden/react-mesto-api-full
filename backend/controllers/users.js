@@ -24,12 +24,10 @@ module.exports.createUser = (req, res, next) => {
             email, password: hash, name, about, avatar,
           })
             .then((user) => res.status(STATUS_OK).send({
-              data: {
-                name: user.name,
-                about: user.about,
-                avatar: user.avatar,
-                email: user.email,
-              },
+              name: user.name,
+              about: user.about,
+              avatar: user.avatar,
+              email: user.email,
             }));
         });
     })
@@ -60,7 +58,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
-    .then((users) => res.status(STATUS_OK).send({ data: users }))
+    .then((users) => res.status(STATUS_OK).send(users))
     .catch(next);
 };
 
@@ -70,7 +68,7 @@ module.exports.getUser = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Пользователь по указанному _id не найден');
       }
-      return res.status(STATUS_OK).send({ data: user });
+      return res.status(STATUS_OK).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -89,7 +87,7 @@ module.exports.updateUserInfo = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден');
       }
-      return res.status(STATUS_OK).send({ data: user });
+      return res.status(STATUS_OK).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -108,7 +106,7 @@ module.exports.updateAvatar = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден');
       }
-      return res.status(STATUS_OK).send({ data: user });
+      return res.status(STATUS_OK).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {

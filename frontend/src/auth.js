@@ -1,4 +1,4 @@
-export const baseUrl = 'http://api.mesto.pupkova.nomoredomains.club';
+export const baseUrl = 'http://localhost:3003';
 
 function handleResponse(res) {
     if (!res.ok) {

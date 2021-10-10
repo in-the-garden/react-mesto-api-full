@@ -42,7 +42,7 @@ export function App() {
     function signOut() {
         localStorage.removeItem('token');
         handleLogin();
-        history.push('/sign-in')
+        history.push('/sign-in');
     }
 
     // Проверка токена при обновлении страницы
@@ -52,7 +52,7 @@ export function App() {
         if(token) {
             auth.getContent(token).then((res) => {
                 if(res) {
-                    setEmail(res.data.email);
+                    setEmail(res.email);
                     setLoggedIn(true);
                     history.push('/')
                 }
@@ -195,7 +195,7 @@ export function App() {
             setCards(initialCards);
         }).catch(err => console.log('Ошибка', err)
         )
-    }, [])
+    }, [loggedIn])
 
     // Проверка токена для отрисовки
     React.useEffect(() => {

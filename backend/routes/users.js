@@ -9,11 +9,10 @@ userRouter.get('/', getUsers);
 
 userRouter.get('/me', getUser);
 
+
+
 userRouter.patch('/me',
   celebrate({
-    headers: Joi.object().keys({
-      authorization: Joi.string().hex().required(),
-    }).unknown(true),
     body: Joi.object().keys({
       name: Joi.string().required().min(2).max(30),
       about: Joi.string().required().min(2).max(30),
@@ -24,9 +23,6 @@ userRouter.patch('/me',
 userRouter.patch(
   '/me/avatar',
   celebrate({
-    headers: Joi.object().keys({
-      authorization: Joi.string().hex().required(),
-    }).unknown(true),
     body: Joi.object().keys({
       avatar: Joi.string().required().custom(validateURL),
     }),
