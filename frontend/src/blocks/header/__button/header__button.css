@@ -1,0 +1,16 @@
+.header__button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: 400;
+    background: inherit;
+    color: inherit;
+    transform: opacity 1s ease-in;
+    text-decoration: none;
+    align-self: center;
+}
+
+.header__button:hover {
+    opacity: .6;
+    cursor: pointer;
+}

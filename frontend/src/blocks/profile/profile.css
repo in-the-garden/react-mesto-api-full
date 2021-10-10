@@ -1,0 +1,41 @@
+.profile {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 39px 200px 0 201px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 1100px) {
+    .profile {
+        padding: 39px 150px 0;
+    }
+}
+
+@media (max-width: 970px) {
+    .profile {
+        padding: 39px 100px 0;
+    }
+}
+
+@media (max-width: 870px) {
+    .profile {
+        padding: 39px 50px 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .profile {
+        padding: 42px 50px 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .profile {
+        padding: 42px 19px 0;
+    }
+}

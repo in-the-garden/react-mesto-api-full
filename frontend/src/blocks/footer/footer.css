@@ -1,0 +1,30 @@
+.footer {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 66px 0 60px 200px;
+}
+
+@media (max-width:1100px) {
+    .footer {
+        padding: 66px 0 60px 150px;
+    }
+}
+
+@media (max-width:970px) {
+    .footer {
+        padding: 66px 0 60px 100px;
+    }
+}
+
+@media (max-width: 870px) {
+    .footer {
+        padding: 58px 0 48px 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        padding: 48px 0 36px 19px;
+    }
+}

@@ -1,0 +1,9 @@
+.popup__confirm_btn_card-dlt {
+    margin: 38px 36px 36px;
+}
+
+@media (max-width:650px) {
+    .popup__confirm_btn_card-dlt {
+        margin: 35.6px 22px 25px;
+    }
+}   
