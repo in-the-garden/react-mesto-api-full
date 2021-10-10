@@ -13,7 +13,11 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3003 } = process.env;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: true,
+  exposedHeaders: '*',
+  credentials: true,
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

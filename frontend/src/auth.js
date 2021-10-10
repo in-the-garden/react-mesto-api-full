@@ -1,4 +1,4 @@
-export const baseUrl = 'https://auth.nomoreparties.co';
+export const baseUrl = 'http://api.mesto.pupkova.nomoredomains.club';
 
 function handleResponse(res) {
     if (!res.ok) {
