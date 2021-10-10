@@ -14,8 +14,14 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3003 } = process.env;
 const app = express();
 
-app.use(cors());
-app.options('*', cors());
+const corsOption = {
+  origin: '*',
+  methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
+  credentials: true,
+};
+
+app.use(cors(corsOption));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
