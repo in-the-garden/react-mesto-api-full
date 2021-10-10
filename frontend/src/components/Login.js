@@ -18,7 +18,6 @@ export function Login(props) {
         const { email, password } = logInfo;
         auth.authorize(email, password).then((data) => {
             if(data.token) {
-                //setlogInfo({email: '', password: ''});
                 props.handleLogin();
                 history.push('/')
             } else {
