@@ -14,14 +14,7 @@ const { validateRegister } = require('./middlewares/validate');
 const { PORT = 3003 } = process.env;
 const app = express();
 
-const corsOption = {
-  origin: '*',
-  methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
-  credentials: true,
-};
-
-app.use(cors(corsOption));
-
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
