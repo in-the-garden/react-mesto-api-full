@@ -14,7 +14,12 @@ const { validateRegister } = require('./middlewares/validate');
 const { PORT = 3003 } = process.env;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['localhost:3003', 'http://localhost:3003', 'http://mesto.pupkova.nomoredomains.club', 'https://mesto.pupkova.nomoredomains.club'],
+  methods: ['GET', 'PUT', 'POST', ' DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
