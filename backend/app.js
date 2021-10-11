@@ -34,8 +34,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 // Подключаем логгер запросов
 app.use(requestLogger);
 
-app.post('/sign-in', login);
-app.post('/sign-up', validateRegister, createUser);
+app.post('/signin', login);
+app.post('/signup', validateRegister, createUser);
 
 app.use(auth);
 
