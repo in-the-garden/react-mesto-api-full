@@ -9,6 +9,7 @@ const { createUser, login } = require('./controllers/users');
 const NotFoundError = require('./errors/not-found-err');
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { validateRegister } = require('./middlewares/validate');
 
 const { PORT = 3003 } = process.env;
 const app = express();
@@ -36,7 +37,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(requestLogger);
 
 app.post('/signin', login);
-app.post('/signup', createUser);
+app.post('/signup', validateRegister, createUser);
 
 app.use(auth);
 

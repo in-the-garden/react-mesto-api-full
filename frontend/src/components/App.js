@@ -193,7 +193,7 @@ export function App() {
                 api.getInitialCards()
             ]).then(([userInfo, initialCards]) => {
                 setCurrentUser(userInfo);
-                setCards(initialCards);
+                setCards(initialCards.reverse());
             }).catch(err => console.log('Ошибка', err)
             )
         }
