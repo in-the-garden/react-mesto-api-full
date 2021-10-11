@@ -36,6 +36,7 @@
 
 @media (max-width: 450px) {
     .profile {
-        padding: 42px 19px 0;
+        padding: 42px 0 0;
+        margin: 0 auto;
     }
 }

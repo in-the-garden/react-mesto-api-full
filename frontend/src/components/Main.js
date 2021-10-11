@@ -20,12 +20,12 @@ export function Main(props) {
                     </button>
                     <div className="profile__info">
                         <h1 className="profile__title">{currentUser.name}</h1>
+                        <p className="profile__subtitle">{currentUser.about}</p>
                         <button 
                             type="button" 
                             className="profile__edit-button" 
                             onClick={props.onEditProfile}>
                         </button>
-                        <p className="profile__subtitle">{currentUser.about}</p>
                     </div>
                 </div>
                 <button type="button" className="profile__add-button" onClick={props.onAddPlace}></button>

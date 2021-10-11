@@ -15,7 +15,6 @@ class Api {
         return fetch(`${this.baseUrl}/users/me`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json'
             }
         })
         .then(this._handleResponse)
@@ -25,7 +24,6 @@ class Api {
         return fetch(`${this.baseUrl}/cards`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json'
             }
         })
         .then(this._handleResponse)
@@ -73,7 +71,7 @@ class Api {
     }
 
     setLike(cardElement) {
-        return fetch(`${this.baseUrl}/cards/likes/${cardElement._id}`,{
+        return fetch(`${this.baseUrl}/cards/${cardElement._id}/likes`,{
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -84,7 +82,7 @@ class Api {
     }
 
     deleteLike(cardElement) {
-        return fetch(`${this.baseUrl}/cards/likes/${cardElement._id}`,{
+        return fetch(`${this.baseUrl}/cards/${cardElement._id}/likes`,{
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -111,7 +109,6 @@ class Api {
 
 const api = new Api({
     baseUrl: 'http://localhost:3003',
-    
 });
 
 export default api

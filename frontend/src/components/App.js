@@ -149,7 +149,7 @@ export function App() {
 
     // Установка like карточке
     function handleCardLike(card) {
-        const isLiked = card.likes.some(like => like._id === currentUser._id);
+        const isLiked = card.likes.some(like => like === currentUser._id);
 
         if (!isLiked) {
             api.setLike(card).then((newCard) => {
@@ -187,14 +187,16 @@ export function App() {
     
     // Отрисовка инфо на странице
     React.useEffect(() => {
-        Promise.all([
-            api.getUserInfo(),
-            api.getInitialCards()
-        ]).then(([userInfo, initialCards]) => {
-            setCurrentUser(userInfo);
-            setCards(initialCards);
-        }).catch(err => console.log('Ошибка', err)
-        )
+        if(loggedIn) {
+            Promise.all([
+                api.getUserInfo(),
+                api.getInitialCards()
+            ]).then(([userInfo, initialCards]) => {
+                setCurrentUser(userInfo);
+                setCards(initialCards);
+            }).catch(err => console.log('Ошибка', err)
+            )
+        }
     }, [loggedIn])
 
     // Проверка токена для отрисовки

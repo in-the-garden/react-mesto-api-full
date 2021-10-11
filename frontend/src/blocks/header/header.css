@@ -38,5 +38,6 @@
     .header {
         margin: 0;
         padding: 25px 0 31.6px;
+        min-width: 320px;
     }
 }
