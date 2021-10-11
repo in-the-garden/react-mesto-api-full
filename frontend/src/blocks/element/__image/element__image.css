@@ -1,5 +1,5 @@
 .element__image {
     height: 282px;
-    object-fit: fill;
+    object-fit: cover;
     object-position: center;
 }
