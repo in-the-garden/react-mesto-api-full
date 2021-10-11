@@ -108,7 +108,7 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'http://localhost:3003',
+    baseUrl: 'http://mesto.pupkova.nomoredomains.club',
 });
 
 export default api
