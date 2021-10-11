@@ -1,4 +1,4 @@
-export const baseUrl = 'http://mesto.pupkova.nomoredomains.club';
+export const baseUrl = 'https://api.mesto.pupkova.nomoredomains.club';
 
 function handleResponse(res) {
     if (!res.ok) {
