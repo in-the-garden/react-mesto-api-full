@@ -6,9 +6,9 @@
 # Адрес
  - Публичный IP с сервером: [84.201.178.251](http://84.201.178.251/)
 
- - [http](http://mesto.pupkova.nomoredomains.club/)
-
  - [htpps](https://mesto.pupkova.nomoredomains.club/)
+ 
+ - [API](https://api.mesto.pupkova.nomoredomains.club/)
 
 # Технологии
  - Сайт написан на фреймворке React с использованием
