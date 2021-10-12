@@ -95,7 +95,7 @@ module.exports.findUser = (req, res, next) => {
         next(err);
       }
     });
-}
+};
 
 module.exports.updateUserInfo = (req, res, next) => {
   const { name, about } = req.body;
