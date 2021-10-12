@@ -24,11 +24,11 @@
 
 ### Разработка
 **Frontend**  
-  `npm run start` - запуск приложения
+  `npm run start` - запуск приложения  
 Приложение запустится на http://localhost:3010
 
 **Backend**  
-  `npm run dev` — запускает сервер с hot-reload
+  `npm run dev` — запускает сервер с hot-reload  
 Приложение запустится на http://localhost:3003
 
 # &#9881; Доработка
