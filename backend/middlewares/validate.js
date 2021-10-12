@@ -1,5 +1,13 @@
 const { celebrate, Joi } = require('celebrate');
-const { validateURL } = require('../utils/validation');
+const validator = require('validator');
+
+const validateURL = (value) => {
+  const result = validator.isURL(value);
+  if (result) {
+    return value;
+  }
+  throw new Error('Введен некорректный URL');
+};
 
 module.exports.validateRegister = celebrate({
   body: Joi.object().keys({
