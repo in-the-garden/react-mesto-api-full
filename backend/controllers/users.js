@@ -79,6 +79,24 @@ module.exports.getUser = (req, res, next) => {
     });
 };
 
+module.exports.findUser = (req, res, next) => {
+  const { id } = req.params;
+  User.findById(id)
+    .then((user) => {
+      if (!user) {
+        throw new NotFoundError('Пользователь по указанному _id не найден');
+      }
+      return res.status(STATUS_OK).send(user);
+    })
+    .catch((err) => {
+      if (err.name === 'ValidationError' || err.name === 'CastError') {
+        next(new BadRequestError('Переданы некорретные данные для получения информации о профиле пользователя'));
+      } else {
+        next(err);
+      }
+    });
+}
+
 module.exports.updateUserInfo = (req, res, next) => {
   const { name, about } = req.body;
 
